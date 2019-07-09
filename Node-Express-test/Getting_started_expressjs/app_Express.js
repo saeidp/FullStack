@@ -8,10 +8,10 @@ app.get("/", (req, res) => {
 app.listen(3000);
 
 // in node you had to use this
-// const http = require("http");
-// const server = http.createServer((req, res) => {
-//   res.write("Hello World from nodejs");
-//   res.end();
-// });
+const http = require("http");
+const server = http.createServer((req, res) => {
+  res.write("Hello World from nodejs");
+  res.end();
+});
 
-// server.listen("3000");
+server.listen("3000");

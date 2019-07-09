@@ -1,9 +1,9 @@
 // Create web server with nodejs
 const http = require("http");
-// const server = http.createServer((req, res) => {
-//   res.write("Hello World from nodejs");
-//   res.end();
-// });
+const server = http.createServer((req, res) => {
+  res.write("Hello World from nodejs");
+  res.end();
+});
 
 // ie: http:localhost:3000/banana
 const server = http.createServer((req, res) => {
