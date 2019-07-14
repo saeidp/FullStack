@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import NavBar from "./components/NavBar";
-import CoursesList from "./components/CourseList";
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <NavBar />
-        <CoursesList />
-      </div>
-    );
-  }
-}
+import SimpleContainer from './components/Container'
+const App = () => {
+  return (
+    <div>
+      <NavBar />
+      <SimpleContainer />
+    </div>
+  );
+};
 
 export default App;
