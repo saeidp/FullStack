@@ -1,39 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
+import useCustom from "./customHook";
+console.log("counter start");
+const Counter = () => {
+  console.log("beforeusecustom");
+  const [globalState, setGlobalState] = useCustom();
+  console.log("counter");
 
-class Counter extends Component {
-  state = {
-    count: 0
+  const add1Global = () => {
+    console.log("addglobal");
+    const newCounterValue = globalState.counter + 1;
+    setGlobalState({ counter: newCounterValue });
   };
 
-  handleIncrement = product => {
-    console.log(product);
-    this.setState({ count: this.state.count + 1 });
-  };
-
-  render() {
-    return (
-      <div>
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button
-          onClick={() => this.handleIncrement(2)}
-          className="btn btn-secondary btn-sm"
-        >
-          Increment
-        </button>
-      </div>
-    );
-  }
-
-  formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
-  }
-
-  getBadgeClasses() {
-    let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
-    return classes;
-  }
-}
+  return (
+    <div>
+      <p>
+        counter:
+        {globalState.counter}
+      </p>
+      <button type="button" onClick={add1Global}>
+        +1 to global
+      </button>
+    </div>
+  );
+};
 
 export default Counter;
