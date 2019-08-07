@@ -234,10 +234,51 @@ exports.__esModule = true;
 // console.log(foo); // 123
 // This problem doesn't happen using function
 // functions create a new scope
-var foo = 123;
-function test() {
-    console.log(foo);
-    var foo = 456;
-}
-test();
-console.log(foo); // 123
+// var foo = 123;
+// function test() {
+//   console.log(foo); // undefined
+//   var foo = 456;
+// }
+// test();
+// console.log(foo); // 123
+// ---------------------------------------------------------------
+// let in closure
+// What is the output of this?
+// var funcs = [];
+// // create a bunch of functions
+// for (var i = 0; i < 3; i++) {
+//   funcs.push(function() {
+//     console.log(i);
+//   });
+// }
+// // call them
+// for (var j = 0; j < 3; j++) {
+//   funcs[j]();
+// }
+// // output will be 3 3 3
+// // Use let to fix
+// var funcs = [];
+// // create a bunch of functions
+// for (let i = 0; i < 3; i++) {
+//   // Note the use of let
+//   funcs.push(function() {
+//     console.log(i);
+//   });
+// }
+// // call them
+// for (var j = 0; j < 3; j++) {
+//   funcs[j]();
+// }
+// // output will be 0 1 2
+//------------------------------------------------------
+// const
+// const foo = 123;
+// const foo = 123;
+// foo = 456; // ERROR: Left-hand side of an assignment expression
+// //cannot be a constant
+// const foo = { bar: 123 };
+// foo = { bar: 456 }; // ERROR : Left hand side of an assignment
+// //expression cannot be a constant
+var foo = { bar: 123 };
+foo.bar = 456; // Allowed!
+console.log(foo); // { bar: 456
