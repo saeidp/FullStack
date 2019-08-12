@@ -318,7 +318,7 @@ export {};
 // }
 // // output will be 0 1 2
 
-//------------------------------------------------------
+// ------------------------------------------------------
 // const
 // const foo = 123;
 // const foo = 123;
@@ -329,7 +329,58 @@ export {};
 // foo = { bar: 456 }; // ERROR : Left hand side of an assignment
 // //expression cannot be a constant
 
-const foo = { bar: 123 };
-foo.bar = 456; // Allowed!
-console.log(foo); // { bar: 456
-//--------------------------------------------------------------
+// const foo = { bar: 123 };
+// foo.bar = 456; // Allowed!
+// console.log(foo); // { bar: 456
+// --------------------------------------------------------------
+
+// // Objet Destructing
+// var rect = { x: 0, y: 10, width: 15, height: 20 };
+
+// // Destructuring assignment
+// var { x, y, width, height } = rect;
+// console.log(x, y, width, height); // 0,10,15,20
+
+// rect.x = 10;
+// ({ x, y, width, height } = rect); // assign to existing variables using outer parentheses
+// console.log(x, y, width, height); // 10,10,15,20
+// //-----------------------------------------------------
+// // Object Destructuring with rest
+// var { w, x, ...remaining } = { w: 1, x: 2, y: 3, z: 4 };
+// console.log(w, x, remaining); // 1, 2, {y:3,z:4}
+
+// // A common use case is also to ignore certain properties
+// // Example function
+// function goto(point2D: { x: number; y: number }) {
+//   // Imagine some code that might break
+//   // if you pass in an object
+//   // with more items than desired
+// }
+// // Some point you get from somewhere
+// const point3D = { x: 1, y: 2, z: 3 };
+// /** A nifty use of rest to remove extra properties */
+// const { z, ...point2D } = point3D;
+// console.log(point2D);
+// goto(point2D);
+// //---------------------------------------------
+// // Array Destructing
+// var x = 1, y = 2;
+// [x, y] = [y, x];
+// console.log(x, y); // 2,1
+// //---------------------------------------------
+// // Array Destructuring with rest
+// // You can pick up any number of elements from an array and get an array of the
+// // remaining elements using array destructuring with rest.
+// var [x, y, ...remaining2] = [1, 2, 3, 4];
+// console.log(x, y, remaining2); // 1, 2, [3,4]
+
+// var [x, , ...remaining3] = [1, 2, 3, 4];
+// console.log(x, remaining3); // 1, [3,4]
+//// ------------------------------------------------
+
+// Spread operator. Previously you would need to use Function.prototype.apply
+function foo(x, y, z) {}
+var args = [0, 1, 2];
+console.log(args);
+console.log(...args);
+// foo(...args);
