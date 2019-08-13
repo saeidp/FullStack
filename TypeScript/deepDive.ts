@@ -334,7 +334,7 @@ export {};
 // console.log(foo); // { bar: 456
 // --------------------------------------------------------------
 
-// // Objet Destructing
+// // Destructing
 // var rect = { x: 0, y: 10, width: 15, height: 20 };
 
 // // Destructuring assignment
@@ -344,7 +344,7 @@ export {};
 // rect.x = 10;
 // ({ x, y, width, height } = rect); // assign to existing variables using outer parentheses
 // console.log(x, y, width, height); // 10,10,15,20
-// //-----------------------------------------------------
+
 // // Object Destructuring with rest
 // var { w, x, ...remaining } = { w: 1, x: 2, y: 3, z: 4 };
 // console.log(w, x, remaining); // 1, 2, {y:3,z:4}
@@ -362,12 +362,12 @@ export {};
 // const { z, ...point2D } = point3D;
 // console.log(point2D);
 // goto(point2D);
-// //---------------------------------------------
+
 // // Array Destructing
 // var x = 1, y = 2;
 // [x, y] = [y, x];
 // console.log(x, y); // 2,1
-// //---------------------------------------------
+
 // // Array Destructuring with rest
 // // You can pick up any number of elements from an array and get an array of the
 // // remaining elements using array destructuring with rest.
@@ -378,9 +378,55 @@ export {};
 // console.log(x, remaining3); // 1, [3,4]
 //// ------------------------------------------------
 
-// Spread operator. Previously you would need to use Function.prototype.apply
-function foo(x, y, z) {}
-var args = [0, 1, 2];
-console.log(args);
-console.log(...args);
-// foo(...args);
+// // Spread operator
+//// Previously you would need to use Function.prototype.apply
+// function foo(x, y, z) {}
+// var args = [0, 1, 2];
+// console.log(args);
+// console.log(...args);
+// //foo(...args); // it doesn't work and i don't know why
+
+// // Destructing
+// var [x, y, ...remaining] = [1, 2, 3, 4];
+// console.log(x, y, remaining); // 1,2,[3,4]
+
+// // Array assignments.
+// // It allows an expanded version of an array into another array
+// var list = [1, 2];
+// list = [...list, 3, 4];
+// console.log(list); // [1,2,3,4]
+
+// var list = [1, 2];
+// list = [0, ...list, 4];
+// console.log(list); // [0,1,2,4]
+// //-----------------------------------------------------------
+// // Object Spread
+// const point2D = {x: 1, y: 2};
+// /** Create a new object by using all the point2D props along with z */
+// const point3D = {...point2D, z: 3};
+
+// // what comes first is 'overridden' by what comes later:
+// const point2D_1 = {x: 1, y: 2};
+// const anotherPoint3D = {x: 5, z: 4, ...point2D_1};
+// console.log(anotherPoint3D); // {x: 1, y: 2, z: 4}
+// const yetAnotherPoint3D = {...point2D_1, x: 5, z: 4}
+// console.log(yetAnotherPoint3D); // {x: 5, y: 2, z: 4}
+// --------------------------------------------------------
+
+// for...of
+// for...in for an array does not iterate over the array items. Instead it iterates over
+// the keys of the object passed in.
+// var someArray = [9, 2, 5];
+// for (var item in someArray) {
+//   console.log(item); // 0,1,2
+// }
+
+// var someArray = [9, 2, 5];
+// for (var item2 of someArray) {
+//   console.log(item2); // 9,2,5
+// }
+
+// var hello = "is it me you're looking for?";
+// for (var char of hello) {
+//   console.log(char); // is it me you're looking for?
+// }
