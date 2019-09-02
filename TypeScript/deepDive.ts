@@ -8,7 +8,7 @@ export {};
 // console.log(point2D);
 // -------------------------------------------------------
 
-// Jquey $
+// jquey $
 // // declare var $: any;
 // // $('.awesome').show();
 // ------------------------------------------------------
@@ -40,7 +40,7 @@ export {};
 // console.log(fooIndex);
 // --------------------------------------------------------
 
-// Return an object
+// return an object
 // function toInt(str: string): { valid: boolean; int?: number } {
 //   const int = parseInt(str);
 //   if (isNaN(int)) {
@@ -66,7 +66,7 @@ export {};
 // ------------------------------------------------------------------------------------------------
 
 // this
-// Any access to this keyword within a function is actually controlled
+// any access to this keyword within a function is actually controlled
 // by how the function is actually called.It is commonly referred to as
 // the “calling context.”
 // function foo() {
@@ -80,7 +80,7 @@ export {};
 // bar.foo(); // Logs out `bar` as `foo` was called on `bar`
 // ------------------------------------------------------------------------
 
-// Closures
+// closures
 // function in JavaScript has access to any variables defined in the
 // outer scope
 // function outerFunction(arg) {
@@ -112,8 +112,8 @@ export {};
 // console.log(counter.getVal()); // 2
 // ------------------------------------------------------------------------------
 
-// Truthy
-// Being explicit on Truthy
+// truthy
+// being explicit on Truthy
 // let name1: string = "ss";
 // const hasName = !!name1;
 // console.log(hasName); // true
@@ -123,7 +123,7 @@ export {};
 // console.log(hasName2); // false
 // -------------------------------------------------------------
 
-// Inheritence
+// inheritence
 // class Point {
 //   x: number;
 //   y: number;
@@ -147,7 +147,7 @@ export {};
 //   }
 // }
 // ------------------------------------------------------------------
-// Arrow functions
+// arrow functions
 // var inc = (x: number) => x + 1;
 
 // this meaning is fixed using arrow function. This in below is windo in this case
@@ -188,7 +188,7 @@ export {};
 // setTimeout(function() { console.log(person.age); },2000); // 2
 // ----------------------------------------------------------------------
 
-// Arrow functions and inheritance
+// arrow functions and inheritance
 // class Adder {
 //     constructor(public a: number) {}
 //     add = (b: number): number => {
@@ -201,13 +201,13 @@ export {};
 //     }
 // }
 
-// Demo to show it works
+// demo to show it works
 // const child = new Child(123);
 // console.log(child.callAdd(123)); // 246
 
 // the above do not work with the super keyword when you try to
 //  override the function in a child class.
-// Since there is only one this such functions cannot participate in a call
+// since there is only one this such functions cannot participate in a call
 // to super (super only works on prototype members). You can easily get around it
 // by creating a copy of the method before overriding it in the child.
 // class Adder {
@@ -228,24 +228,24 @@ export {};
 // }
 
 // ------------------------------------------------------------------------------
-// Quick object return
-// Sometimes you need a function that just returns a simple object literal
-// WRONG WAY TO DO IT. is parsed as a block containing a JavaScript Label by JavaScript runtimes
+// quick object return
+// sometimes you need a function that just returns a simple object literal
+// wRONG WAY TO DO IT. is parsed as a block containing a JavaScript Label by JavaScript runtimes
 
 // var foo = () => {
 //     bar: 123
 // };
 
-// You can fix it by surrounding the object literal with ()
-// Correct 🌹
+// you can fix it by surrounding the object literal with ()
+// correct 🌹
 
 // var foo = () => ({
 //     bar: 123
 // });
 
 // ------------------------------------------------------------------
-// Rest parameters
-// Rest parameters (denoted by ...argumentName for the last argument) allow you to quickly
+// rest parameters
+// rest parameters (denoted by ...argumentName for the last argument) allow you to quickly
 // accept multiple arguments in your function and get them as an array
 
 // function iTakeItAll(first, second, ...allOthers) {
@@ -272,7 +272,7 @@ export {};
 // }
 // console.log(foo); // 123
 
-// This problem doesn't happen using function
+// this problem doesn't happen using function
 // functions create a new scope
 
 // var foo = 123;
@@ -286,7 +286,7 @@ export {};
 // ---------------------------------------------------------------
 
 // let in closure
-// What is the output of this?
+// what is the output of this?
 
 // var funcs = [];
 // // create a bunch of functions
@@ -379,7 +379,7 @@ export {};
 //// ------------------------------------------------
 
 // // Spread operator
-//// Previously you would need to use Function.prototype.apply
+//// previously you would need to use Function.prototype.apply
 // function foo(x, y, z) {}
 // var args = [0, 1, 2];
 // console.log(args);
@@ -430,20 +430,27 @@ export {};
 // for (var char of hello) {
 //   console.log(char); // is it me you're looking for?
 // }
-//--------------------------------------------------------------------------------------
-//Template String
-var lyrics = 'Never gonna give you up';
-var html = '<div>' + lyrics + '</div>';
+// --------------------------------------------------------------------------------------
+// template String
+// var lyrics = 'Never gonna give you up';
+// var html = '<div>' + lyrics + '</div>';
 
-var lyrics = 'Never gonna give you up';
-var html = `<div>${lyrics}</div>`;
+// var lyrics = 'Never gonna give you up';
+// var html = `<div>${lyrics}</div>`;
 
-console.log(`1 and 1 make ${1 + 1}`);
+// console.log(`1 and 1 make ${1 + 1}`);
 
-//Multiple Strings
-var lyrics = "Never gonna give you up \
-\nNever gonna let you down";
+// //Multiple Strings
+// var lyrics = "Never gonna give you up \
+// \nNever gonna let you down";
 
-// With Typescript using template string
-var lyrics = `Never gonna give you up
-Never gonna let you down`;
+// // With Typescript using template string
+// var lyrics = `Never gonna give you up
+// never gonna let you down`;
+
+// -------------------------------------------------
+// creating types and use it as a domain
+type StatusEnum = "Good" | "Bad" | "None";
+
+const status: StatusEnum = "Bad";
+// you get intellisense and you are just able to assign one of those values
