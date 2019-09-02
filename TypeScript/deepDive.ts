@@ -430,3 +430,20 @@ export {};
 // for (var char of hello) {
 //   console.log(char); // is it me you're looking for?
 // }
+//--------------------------------------------------------------------------------------
+//Template String
+var lyrics = 'Never gonna give you up';
+var html = '<div>' + lyrics + '</div>';
+
+var lyrics = 'Never gonna give you up';
+var html = `<div>${lyrics}</div>`;
+
+console.log(`1 and 1 make ${1 + 1}`);
+
+//Multiple Strings
+var lyrics = "Never gonna give you up \
+\nNever gonna let you down";
+
+// With Typescript using template string
+var lyrics = `Never gonna give you up
+Never gonna let you down`;
