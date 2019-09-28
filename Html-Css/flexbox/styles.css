@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  color: #fff;
+  background-color: #5995da; /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login {
+  margin-left: 20px;
+}
+
+/* Auto-margins eat up all the extra space in a flex 
+container, so instead of distributing items equally, 
+this moves the .signup and any following items (.login)
+to the right side of the container. */
+.signup {
+  margin-left: auto;
+}
+
+.header-container {
+  color: #5995da;
+  background-color: #d6e9fe;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  /* make vertically alignment because direction is row */
+  align-items: center;
+}
+
+/* .social,
+.logo,
+.subscribe {
+  border: 1px solid #5995da;
+} */
+
+/* flex item alignment */
+/* Adding this to a flex item overrides the align-items
+ value from its container: */
+.social,
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.photo-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-grid {
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* if flex direction is column then you need to use the following */
+  /* then it gets horizontally aligned otherwise vertical align */
+  align-items: center;
+}
+
+.photo-grid-item {
+  border: 1px solid #fff;
+  width: 300px;
+  height: 300px;
+}
+
+/* swap order of the first element and the last */
+/* Adding an order property to a flex item defines its 
+order in the container without affecting surrounding items.
+Its default value is 0, and increasing or decreasing it 
+from there moves the item to the right or left, respectively. */
+.first-item {
+  order: 1;
+}
+
+.last-item {
+  order: -1;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+/* That flex: 1; line tells the items to stretch to 
+match the width of .footer. Since they all have the 
+same weight, they’ll stretch equally: */
+.footer-item {
+  border: 1px solid #fff;
+  background-color: #d6e9fe;
+  height: 200px;
+  flex: 1;
+}
+
+/* overwrite the above and make the last one two 
+times more space */
+/* .footer-three {
+  flex: 2;
+} */
+
+/* flex: initial falls back to the item’s explicit width
+ property. The second one is flex 1 */
+.footer-one,
+.footer-three {
+  background-color: #5995da;
+  flex: initial;
+  width: 300px;
+}
+
+/* Use display: flex; to create a flex container.
+Use justify-content to define the horizontal alignment of items.
+Use align-items to define the vertical alignment of items.
+Use flex-direction if you need columns instead of rows.
+Use the row-reverse or column-reverse values to flip item order.
+Use order to customize the order of individual elements.
+Use align-self to vertically align individual items.
+Use flex to create flexible boxes that can stretch and shrink. */
