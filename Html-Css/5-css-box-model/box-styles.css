@@ -1,0 +1,54 @@
+/* It’s usually a good idea to override default styles to a
+predictable value using the “universal” CSS selector (*) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+h1 {
+  background-color: #dde0e3;
+  padding: 50px;
+  border-bottom: 1px solid #5d6063;
+}
+
+p {
+  background-color: #dde0e3; /* Light gray */
+  padding: 20px 0 20px 10px; /* Top  Right  Bottom  Left */
+  margin-bottom: 50px; /* Add this */
+  margin-top: 25px;
+
+  /* padding: 20px 10px; Vertical  Horizontal */
+}
+
+em,
+strong {
+  background-color: #b2d6ff; /* Light blue */
+  display: inline;
+}
+
+div {
+  color: #fff;
+  background-color: #5995da;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  /* border: 5px solid #5d6063; */
+  border-radius: 5px;
+  width: 200px;
+  box-sizing: border-box; /* by default just content is 200px
+  then padding and borders are added but in this case all
+  together are 200px */
+  margin: 20px auto; /* Vertical  Horizontal. only when with is defined*/
+}
+/* 
+in above if we have two block element next to each other and
+we have both margin bottom and top only the largest distance 
+will be considered. 
+margin-bottom:50px
+margin-top:25px
+the two P will be 50 apart not 75. Padding don't collapse
+and don't have this issue. flexbox don't have this issue as well  */
