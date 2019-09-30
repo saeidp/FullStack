@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 1200px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.example {
+  display: flex;
+  justify-content: space-around;
+
+  width: 800px;
+  margin: 50px 0;
+  background-color: #d6e9fe;
+}
+
+.item img {
+  display: block;
+}
+
+/* The position: relative; line makes it a positioned element,
+and the top and left properties let you define how far it’s
+offset from its static position. */
+.item-relative {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+
+/* Absolute positioning” is just like relative positioning,
+but the offset is relative to the entire browser window
+instead of the original position of the element */
+.item-absolute {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* item absolute will be relative to its parrent instead of whole page
+if its container is relative positioned */
+.absolute {
+  position: relative;
+}
+
+/* “Fixed positioning” has a lot in common with absolute positioning:
+it’s very manual, the element is removed from the normal flow of the
+page, and the coordinate system is relative to the entire browser
+window. The key difference is that fixed elements don’t scroll 
+with the rest of the page. */
+.item-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

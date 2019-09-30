@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 1200px;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: #5d6063;
+}
+
+a:link,
+a:visited {
+  color: #5d6063;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 50px;
+  background: #d6e9fe;
+}
+
+.menu {
+  margin-top: 15px;
+}
+/* child selector (only the direct child) */
+.menu > li {
+  display: inline;
+  margin-right: 50px;
+}
+
+.menu > li:last-of-type {
+  margin-right: 0;
+}
+
+.dropdown:hover .features-menu {
+  display: flex;
+  flex-direction: column;
+  background: #b2d6ff;
+  border-radius: 5px;
+  padding-top: 60px;
+
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  z-index: 1;
+}
+
+.features-menu {
+  display: none;
+}
+
+/* decendabnt li */
+.features-menu li {
+  list-style: none;
+  border-bottom: 1px solid #fff;
+
+  padding: 0 40px 10px 20px;
+  margin: 10px;
+}
+
+.features-menu li:last-of-type {
+  border-bottom: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > span {
+  z-index: 2;
+  position: relative; /* This is important! */
+  cursor: pointer;
+}
+
+/* In this chapter, we took a look at four new CSS layout schemes:
+
+Relative
+Absolute
+Relatively absolute
+Fixed 
+Relative positioning was for tweaking the position of an element
+without affecting its surrounding boxes. Absolute positioning
+took elements out of the static flow of the page and placed
+them relative to the browser window, while relatively absolute
+positioning allowed us to hook back into the static flow of the
+page. Finally, fixed positioning let us make elements that didn't
+scroll with the rest of the page. */
