@@ -450,11 +450,11 @@ export {};
 
 // -------------------------------------------------
 // creating types and use it as a domain
-type StatusEnum = "Good" | "Bad" | "None";
+type StatusEnum = 'Good' | 'Bad' | 'None';
 
-const status: StatusEnum = "Bad";
+const status: StatusEnum = 'Bad';
 // you get intellisense and you are just able to assign one of those values
-//--------------------------------------------------
+// --------------------------------------------------
 // //Promise
 // function iReturnPromiseAfter1Second(): Promise<string> {
 //   return new Promise(resolve => {
@@ -474,8 +474,8 @@ const status: StatusEnum = "Bad";
 //     // res is inferred to be of type `string`
 //     console.log(res); // Hello world!
 //   });
-//-------------------------------------------------------
-// Generators
+// -------------------------------------------------------
+// generators
 // function* infiniteSequence() {
 //   var i = 0;
 //   while (true) {
@@ -500,8 +500,8 @@ const status: StatusEnum = "Bad";
 // console.log(gen.next()); // { value: 1, done: false }
 // console.log(gen.next()); // { value: 2, done: false }
 // console.log(gen.next()); // { done: true }
-//------------------------------------------------
-// Not actual code. A thought experiment
+// ------------------------------------------------
+// not actual code. A thought experiment
 // async function foo() {
 //   try {
 //       var val = await getMeAPromise();
@@ -532,3 +532,4 @@ const status: StatusEnum = "Bad";
 
 //   console.log("World!");
 // }
+//-------------------------------------------------------------
