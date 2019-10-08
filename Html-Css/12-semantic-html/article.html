@@ -23,8 +23,14 @@
       <article>
         <header>
           <h1>Semantic HTML</h1>
-          <p>By Troy McClure. Published January 3rd</p>
+          <p>By Troy McClure. Published <time datetime='2017-1-3'>January 3rd</time> </p>
         </header>
+
+        <!-- Look! A fake advertisement! -->
+        <!-- remove information from an article -->
+        <aside class='advert'>
+          <img src='some-advert-image.png' />
+        </aside>
 
         <p>This is an example web page explaining HTML5 semantic markup.</p>
 
@@ -32,6 +38,12 @@
           <h2>The Document Outline</h2>
           <p>HTML5 includes several “sectioning content” elements that
             affect the document outline.</p>
+
+          <figure>
+            <img src='semantic-elements.png' alt='Diagram showing <article>, <section>, and <nav> elements' />
+            <figcaption>New HTML5 semantic elements</figcaption>
+          </figure>
+
           <h3>Headers</h3>
           <p>The <code>&lt;header&gt;</code> element is one such sectioning
             element.</p>
@@ -48,9 +60,35 @@
 
         <footer>
           <p>This fake article was written by somebody at InternetingIsHard.com, which
-            is a pretty decent place to learn how to become a web developer.</p>
+            is a pretty decent place to learn how to become a web developer.This footer
+            is only for the containing <code>&lt;article&gt;</code> element.</p>
+          <address>
+            Please contact <a href='mailto:troymcclure@example.com'>Troy
+              McClure</a> for questions about this article.
+          </address>
         </footer>
       </article>
+
+      <aside class='sidebar'>
+        <h2>Sidebar</h2>
+        <p>Some sidebar content</p>
+        <nav>
+          <h3>HTML &amp; CSS Tutorial</h3>
+          <ul>
+            <li><a href='#'>Introduction</a></li>
+            <li><a href='#'>Basic Web Pages</a></li>
+            <li><a href='#'>etc...</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>JavaScript Tutorial</h3>
+          <ul>
+            <li><a href='#'>Introduction</a></li>
+            <li><a href='#'>Hello, JavaScript</a></li>
+            <li><a href='#'>etc...</a></li>
+          </ul>
+        </nav>
+      </aside>
 
       <footer>
         <p>&copy; 2017 InternetingIsHard.com</p>
@@ -59,3 +97,32 @@
 </body>
 
 </html>
+
+
+<!-- Summry
+Defining graphical styles with CSS is how we convey the structure of a web page to humans. 
+By marking it up with <header>, <article>, <figure>, and other HTML sectioning elements, 
+we’re able to represent those visual styles to machines, as well.
+To understand why this is important, we really have to empathize with the machines reading
+our content. Before semantic HTML was a thing, developers used a bunch of <div>’s with
+different and somewhat arbitrary class names to define the structure of their pages. 
+For example, all of the following elements are logical names for a site-wide header:
+
+        <div class='main-menu'>
+        <div class='top-nav'>
+        <div class='top-banner'>
+        <div class='header'>
+Machine readers used to have to make sense of all the above <div>’s and more.
+The new semantic HTML elements we learned in this chapter are like standardized versions
+of these class names. Now, they can simply look for a <header> element. We can still add
+whatever class name we want to it for styling purposes, but search engines and screen
+readers now have a predictable way to identify headers across every HTML5 website on
+the Internet.
+The semantic elements we covered in this chapter are best practices for modern websites, 
+but keep in mind that they hardly scratch the surface when it comes to extra meaning
+you can add to your web pages. Just for starters:
+                
+Schema.org microdata lets you alter the appearance of your site in search engine results.
+Twitter cards define how your web page is displayed in tweets.
+Open Graph metadata changes how Facebook shares your content.
+This kind of stuff is closer to the realm of technical SEO
