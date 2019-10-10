@@ -54,9 +54,13 @@
 const birthday = new Date(1980, 6, 31);
 birthday.setFullYear(1997); // thu Jul 31 1997 00:00:00 GMT+0000 (UTC)
 
-// ---------------------------utc-----------------------
-// assign current time to a variable
-const now = new Date();
-// print local and UTC timezones
-console.log(now.getHours());
-console.log(now.getUTCHours());
+// // ---------------------------utc-----------------------
+// // assign current time to a variable
+// const now = new Date();
+// // print local and UTC timezones
+// console.log(now.getHours());
+// console.log(now.getUTCHours());
+
+const epochTime = new Date(0);
+console.log(epochTime.getMilliseconds());
+console.log(epochTime.toLocaleDateString());
