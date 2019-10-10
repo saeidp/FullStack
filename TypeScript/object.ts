@@ -22,4 +22,4 @@ for (let key in gimli) {
   console.log(gimli[key]);
 }
 
-console.log(Object.keys(gimli));
+console.log(Object.keys(gimli)); // ["name", "race", "weapon"]
